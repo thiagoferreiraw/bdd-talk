@@ -58,6 +58,20 @@ class ProgramaTestCase(unittest.TestCase):
     def test_sacar310(self):
         self.assertEqual(sacar(310, 9999), [100, 100, 100, 10])
 
+    def test_sacar_bdd(self):
+        # Contexto
+        saldo = 9999
+        valor = 310
+        print("\n\nDado que o usuário tenha {} de saldo em conta".format(saldo))
+
+        # Ação
+        print("Quando for feito um saque de {}".format(valor))
+        notas = sacar(valor, saldo)
+
+        # Resultado
+        self.assertEqual(notas, [100, 100, 100, 10])
+        print("Então as notas emitidas serão {}\n".format([100, 100, 100, 10]))
+
     def test_menos100(self):
         with self.assertRaises(ValorInvalido):
             sacar(-100, 9999)
