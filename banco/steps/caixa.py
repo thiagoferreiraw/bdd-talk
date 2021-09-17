@@ -17,7 +17,7 @@ def step_impl(context, valor):
 
 @then(u'Então as notas retornadas serão "{notas:S}"')
 def step_impl(context, notas):
-    assert ",".join(map(str, context.notas)) == notas
+    assert ",".join(map(str, context.notas)) == notas, context.notas
 
 
 @then(u"Então deverá ser mostrada a mensagem de saldo indisponível")
