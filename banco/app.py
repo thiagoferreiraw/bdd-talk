@@ -2,7 +2,7 @@
 
 import unittest
 
-notas_disponiveis = [100, 50, 20, 10]
+notas_disponiveis = [200, 100, 50, 20, 10]
 
 
 class SaldoInsuficiente(Exception):

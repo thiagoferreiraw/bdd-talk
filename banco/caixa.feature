@@ -6,14 +6,24 @@ Feature: Saque no caixa eletronico
     Scenario: Saque com valor menor que o saldo em conta
         Given Dado que o cliente possui R$ "510" em conta
         When Quando For feito um saque de R$ "260"
-        Then Então as notas retornadas serão "100,100,50,10"
+        Then Então as notas retornadas serão "200,50,10"
 
-    Scenario: Saque com valor menor que o saldo em conta 2
+    Scenario: Saque com valor menor que o saldo em conta - 2
+        Given Dado que o cliente possui R$ "510" em conta
+        When Quando For feito um saque de R$ "270"
+        Then Então as notas retornadas serão "200,50,20"
+
+    Scenario: Saque com valor menor que o saldo em conta - 3
+        Given Dado que o cliente possui R$ "510" em conta
+        When Quando For feito um saque de R$ "360"
+        Then Então as notas retornadas serão "200,100,50,10"
+
+    Scenario: Saque com valor menor que o saldo em conta - 4
         Given Dado que o cliente possui R$ "50" em conta
         When Quando For feito um saque de R$ "30"
         Then Então as notas retornadas serão "20,10"
 
-    Scenario: Saque com valor menor que o saldo em conta 3
+    Scenario: Saque com valor menor que o saldo em conta - 5
         Given Dado que o cliente possui R$ "200" em conta
         When Quando For feito um saque de R$ "180"
         Then Então as notas retornadas serão "100,50,20,10"
